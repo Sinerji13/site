@@ -1,0 +1,253 @@
+/* Универсальное правило для box-sizing */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Общие стили */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f7f7;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+header {
+  background-color: #222;
+  color: #f0c040;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2.5rem;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px #000;
+}
+
+nav {
+  margin-top: 12px;
+}
+
+nav a {
+  color: #f0c040;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: color 0.3s ease;
+}
+
+nav a:hover {
+  color: #fff;
+  text-shadow: 0 0 8px #f0c040;
+}
+
+/* Основной контент */
+main {
+  max-width: 1100px;
+  margin: 30px auto 60px auto;
+  padding: 0 15px;
+}
+
+/* Заголовки */
+h2, h3 {
+  color: #222;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+}
+
+/* Текст под заголовком главной */
+.main-intro {
+  font-size: 1.15rem;
+  color: #333;
+  max-width: 720px;
+  margin: 15px auto 40px auto;
+  line-height: 1.5;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Секция акций */
+.promo-section {
+  background: linear-gradient(90deg, #f0c040, #f7e17d);
+  border-radius: 12px;
+  padding: 25px 30px;
+  margin: 40px auto;
+  max-width: 700px;
+  color: #4b3900;
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: center;
+  box-shadow: 0 4px 15px rgba(240, 192, 64, 0.5);
+  letter-spacing: 0.05em;
+  animation: pulseGlow 2.5s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 12px 4px rgba(240, 192, 64, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 22px 8px rgba(240, 192, 64, 1);
+  }
+}
+
+/* Карточки товаров */
+.product-card {
+  background: #fff;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+  border-radius: 12px;
+  padding: 15px;
+  width: 260px;
+  margin: 15px;
+  display: inline-block;
+  vertical-align: top;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 14px 30px rgba(240,192,64,0.35);
+}
+
+.product-card img {
+  border-radius: 10px;
+  width: 100%;
+  height: auto;           /* Исправлено: убираем фиксированную высоту */
+  object-fit: contain;    /* Сохраняем пропорции без обрезки */
+  background-color: #f9f9f9;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+.product-card h3 {
+  margin: 12px 0 8px 0;
+  font-size: 1.2rem;
+  color: #222;
+}
+
+.product-card p {
+  font-weight: 700;
+  color: #f0c040;
+  font-size: 1.1rem;
+}
+
+.product-card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 18px;
+  background-color: #f0c040;
+  color: #222;
+  border-radius: 8px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+}
+
+.product-card a:hover {
+  background-color: #e0b030;
+}
+
+/* Форма контактов */
+form {
+  background: #fff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+  max-width: 500px;
+  margin: 40px auto;
+  box-sizing: border-box;  /* Исправлено */
+  width: 90%;              /* Добавлено для адаптивности */
+  min-width: 320px;        /* Минимальная ширина */
+}
+
+form input, form textarea {
+  display: block;
+  margin: 15px auto;
+  padding: 12px 14px;
+  width: 100%;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  transition: border-color 0.3s ease;
+  font-size: 1rem;
+  font-family: inherit;
+}
+
+form input:focus, form textarea:focus {
+  border-color: #f0c040;
+  outline: none;
+}
+
+.form-center {
+  text-align: center;
+}
+
+form button {
+  background-color: #f0c040;
+  color: #222;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1rem;
+  transition: background-color 0.3s ease, transform 0.2s;
+}
+
+form button:hover {
+  background-color: #e0b030;
+  transform: scale(1.05);
+}
+
+/* Секция преимуществ на странице "О нас" */
+.advantages {
+  background-color: #fff9e6;
+  padding: 20px 30px;
+  margin-top: 30px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(240, 192, 64, 0.25);
+  max-width: 720px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.advantages ul {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #444;
+  font-size: 16px;
+}
+
+.advantages li {
+  margin-bottom: 12px;
+}
+
+/* Стили для footer */
+footer {
+  background-color: #222;
+  color: #f0c040;
+  text-align: center;
+  padding: 25px 10px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  box-shadow: 0 -3px 8px rgba(0,0,0,0.3);
+}
+
+footer a {
+  color: #f0c040;
+  text-decoration: none;
+  font-weight: bold;
+  margin: 0 8px;
+  transition: text-decoration 0.3s ease;
+}
+
+footer a:hover {
+  text-decoration: underline;
+}
